@@ -311,6 +311,113 @@
             color: var(--primary);
         }
         
+        /* Contact Page */
+        .contact {
+            padding: 80px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            background-color: var(--secondary);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-detail i {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-right: 15px;
+            width: 20px;
+        }
+        
+        .contact-form {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Checkout Page */
+        .checkout {
+            padding: 80px 0;
+        }
+        
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .checkout-form {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .checkout-summary {
+            background-color: var(--secondary);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid var(--primary);
+        }
+        
         /* Footer */
         footer {
             background-color: var(--dark);
@@ -358,6 +465,15 @@
             color: #ccc;
         }
         
+        /* Page Content */
+        .page-content {
+            display: none;
+        }
+        
+        .page-content.active {
+            display: block;
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .header-container {
@@ -378,7 +494,9 @@
                 font-size: 2.5rem;
             }
             
-            .about-content {
+            .about-content, 
+            .contact-container,
+            .checkout-container {
                 grid-template-columns: 1fr;
             }
             
@@ -397,12 +515,12 @@
                 <div class="logo-text">Prime Cuts</div>
             </div>
             <ul class="nav-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="products">Products</a></li>
+                <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
+                <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
                 <li>
-                    <a href="#" class="cart-icon">
+                    <a href="#" class="cart-icon nav-link" data-page="checkout">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count">3</span>
                     </a>
@@ -411,122 +529,491 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Premium Quality Meat Products</h1>
-            <p>Family-owned meat processing business providing the finest cuts of beef since 1985. Grass-fed, locally sourced, and sustainably raised.</p>
-            <a href="#" class="btn">Shop Now</a>
-        </div>
-    </section>
+    <!-- Home Page -->
+    <div id="home" class="page-content active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Premium Quality Meat Products</h1>
+                <p>Family-owned meat processing business providing the finest cuts of beef since 1985. Grass-fed, locally sourced, and sustainably raised.</p>
+                <a href="#" class="btn nav-link" data-page="products">Shop Now</a>
+            </div>
+        </section>
 
-    <!-- Products Section -->
-    <section class="products">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Products</h2>
+        <!-- Products Section -->
+        <section class="products">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Products</h2>
+                </div>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://i.ibb.co/3mPST1vc/About-Prime-cuts.jpg" alt="Whole Beef">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Whole Beef</h3>
+                            <div class="product-price">$1200.00</div>
+                            <p class="product-description">600 lbs of freshly processed, grass-fed beef. Perfect for large families or bulk orders.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://i.ibb.co/VYLYSrH9/Half-Beef.jpg" alt="Half Beef">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Half Beef</h3>
+                            <div class="product-price">$650.00</div>
+                            <p class="product-description">300 lbs of premium cuts. Get half a beef for a balanced selection of cuts.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1607116667981-ff4b72a5d5c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80" alt="Quarter Beef">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Quarter Beef</h3>
+                            <div class="product-price">$350.00</div>
+                            <p class="product-description">150 lbs of carefully selected cuts. Perfect for small families or those who want a mix.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://i.ibb.co/KxhGvzVH/Eighth-Beef.jpg" alt="Eighth Beef">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Eighth Beef</h3>
+                            <div class="product-price">$175.00</div>
+                            <p class="product-description">75 lbs of our finest cuts. Great for individuals or couples looking for variety.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="product-grid">
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.ibb.co/3mPST1vc/About-Prime-cuts.jpg" alt="Whole Beef">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Whole Beef</h3>
-                        <div class="product-price">$1200.00</div>
-                        <p class="product-description">600 lbs of freshly processed, grass-fed beef. Perfect for large families or bulk orders.</p>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.ibb.co/VYLYSrH9/Half-Beef.jpg" alt="Half Beef">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Half Beef</h3>
-                        <div class="product-price">$650.00</div>
-                        <p class="product-description">300 lbs of premium cuts. Get half a beef for a balanced selection of cuts.</p>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.ibb.co/Y4N1V9LS/Quarter-Beef.jpg" alt="Quarter-Beef" border="0">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Quarter Beef</h3>
-                        <div class="product-price">$350.00</div>
-                        <p class="product-description">150 lbs of carefully selected cuts. Perfect for small families or those who want a mix.</p>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.ibb.co/KxhGvzVH/Eighth-Beef.jpg" alt="Eighth Beef">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Eighth Beef</h3>
-                        <div class="product-price">$175.00</div>
-                        <p class="product-description">75 lbs of our finest cuts. Great for individuals or couples looking for variety.</p>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="https://i.ibb.co/3mPST1vc/About-Prime-cuts.jpg" alt="About Prime Cuts">
-                </div>
-                <div class="about-text">
-                    <h2>Our Story</h2>
-                    <p>Prime Cuts began as a small family farm in 1985 with a commitment to sustainable farming practices and ethical treatment of animals. Today, we've grown into a full-service meat processing business while maintaining our core values.</p>
-                    <p>We partner with local farms that share our commitment to quality and sustainability. All our beef is grass-fed, free-range, and hormone-free.</p>
-                    <p>Our state-of-the-art processing facility is USDA approved, and we follow the highest standards of food safety and quality control.</p>
-                    <a href="#" class="btn">Learn More</a>
+        <!-- About Section -->
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://i.ibb.co/3mPST1vc/About-Prime-cuts.jpg" alt="About Prime Cuts">
+                    </div>
+                    <div class="about-text">
+                        <h2>Our Story</h2>
+                        <p>Prime Cuts began as a small family farm in 1985 with a commitment to sustainable farming practices and ethical treatment of animals. Today, we've grown into a full-service meat processing business while maintaining our core values.</p>
+                        <a href="#" class="btn nav-link" data-page="about">Learn More</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Customer Testimonials</h2>
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Customer Testimonials</h2>
+                </div>
+                <div class="testimonial-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"The quality of Prime Cuts beef is exceptional. We've been customers for over 10 years and their consistency is remarkable. The quarter beef package is perfect for our family of four."</p>
+                        <div class="testimonial-author">- John Doe</div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I purchased a half beef for a family gathering and everyone was impressed with the flavor and tenderness. The ordering process was simple and delivery was prompt."</p>
+                        <div class="testimonial-author">- Jane Smith</div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"As a restaurant owner, I rely on Prime Cuts for consistent quality beef. Their bulk options make it cost-effective, and my customers always compliment the steak dishes."</p>
+                        <div class="testimonial-author">- Robert Johnson</div>
+                    </div>
+                </div>
             </div>
-            <div class="testimonial-grid">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"The quality of Prime Cuts beef is exceptional. We've been customers for over 10 years and their consistency is remarkable. The quarter beef package is perfect for our family of four."</p>
-                    <div class="testimonial-author">- John Doe</div>
+        </section>
+    </div>
+
+    <!-- Products Page -->
+    <div id="products" class="page-content">
+        <section class="products">
+            <div class="container">
+                <div class="section-title">
+                    <h2>All Products</h2>
+                    <p>Browse our complete selection of premium beef cuts</p>
                 </div>
                 
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"I purchased a half beef for a family gathering and everyone was impressed with the flavor and tenderness. The ordering process was simple and delivery was prompt."</p>
-                    <div class="testimonial-author">- Jane Smith</div>
+                <div class="product-filters">
+                    <button class="filter-btn active">All Cuts</button>
+                    <button class="filter-btn">Whole</button>
+                    <button class="filter-btn">Half</button>
+                    <button class="filter-btn">Quarter</button>
+                    <button class="filter-btn">Eighth</button>
                 </div>
                 
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"As a restaurant owner, I rely on Prime Cuts for consistent quality beef. Their bulk options make it cost-effective, and my customers always compliment the steak dishes."</p>
-                    <div class="testimonial-author">- Robert Johnson</div>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://i.ibb.co/3mPST1vc/About-Prime-cuts.jpg" alt="Whole Beef">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Whole Beef</h3>
+                            <div class="product-price">$1200.00</div>
+                            <p class="product-description">600 lbs of freshly processed, grass-fed beef. Perfect for large families or bulk orders.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://i.ibb.co/VYLYSrH9/Half-Beef.jpg" alt="Half Beef">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Half Beef</h3>
+                            <div class="product-price">$650.00</div>
+                            <p class="product-description">300 lbs of premium cuts. Get half a beef for a balanced selection of cuts.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1607116667981-ff4b72a5d5c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80" alt="Quarter Beef">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Quarter Beef</h3>
+                            <div class="product-price">$350.00</div>
+                            <p class="product-description">150 lbs of carefully selected cuts. Perfect for small families or those who want a mix.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://i.ibb.co/KxhGvzVH/Eighth-Beef.jpg" alt="Eighth Beef">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Eighth Beef</h3>
+                            <div class="product-price">$175.00</div>
+                            <p class="product-description">75 lbs of our finest cuts. Great for individuals or couples looking for variety.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional products for the products page -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1590172205848-3db961eb0cd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80" alt="Beef Ribs">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Beef Ribs</h3>
+                            <div class="product-price">$45.00</div>
+                            <p class="product-description">Premium beef ribs, perfect for smoking or slow cooking. Approximately 5 lbs.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1607116667981-ff4b72a5d5c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80" alt="Filet Mignon">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Filet Mignon</h3>
+                            <div class="product-price">$32.00</div>
+                            <p class="product-description">Tender filet mignon steaks, cut to perfection. 4 steaks per package.</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+
+    <!-- About Us Page -->
+    <div id="about" class="page-content">
+        <section class="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About Prime Cuts</h2>
+                    <p>Our commitment to quality and sustainability since 1985</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://i.ibb.co/3mPST1vc/About-Prime-cuts.jpg" alt="About Prime Cuts">
+                    </div>
+                    <div class="about-text">
+                        <h2>Our Story</h2>
+                        <p>Prime Cuts began as a small family farm in 1985 with a commitment to sustainable farming practices and ethical treatment of animals. Today, we've grown into a full-service meat processing business while maintaining our core values.</p>
+                        <p>We partner with local farms that share our commitment to quality and sustainability. All our beef is grass-fed, free-range, and hormone-free.</p>
+                        <p>Our state-of-the-art processing facility is USDA approved, and we follow the highest standards of food safety and quality control.</p>
+                    </div>
+                </div>
+                
+                <div class="about-content" style="margin-top: 60px;">
+                    <div class="about-text">
+                        <h2>Our Process</h2>
+                        <p>We take pride in our meticulous process that ensures the highest quality meat products:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 20px;">
+                            <li>Careful selection of livestock from trusted local farms</li>
+                            <li>Humane treatment and stress-free environment for animals</li>
+                            <li>Expert butchering by our skilled craftsmen</li>
+                            <li>Rigorous quality control at every step</li>
+                            <li>Proper aging for enhanced flavor and tenderness</li>
+                            <li>Vacuum-sealing for freshness and longer shelf life</li>
+                        </ul>
+                        <p>This attention to detail results in superior taste and texture that our customers have come to expect from Prime Cuts.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1590172205848-3db961eb0cd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80" alt="Our Process">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why Choose Us</h2>
+                </div>
+                
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <i class="fas fa-leaf" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                        <h3>Sustainable Farming</h3>
+                        <p>We practice regenerative agriculture that improves soil health and reduces environmental impact.</p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <i class="fas fa-heart" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                        <h3>Animal Welfare</h3>
+                        <p>Our animals are raised stress-free with plenty of space to roam and natural feed.</p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <i class="fas fa-award" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                        <h3>Premium Quality</h3>
+                        <p>We follow strict quality standards to ensure you receive the best possible products.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page-content">
+        <section class="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                    <p>We'd love to hear from you! Get in touch with us.</p>
+                </div>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>1234 Farm Road, Countryside, TX 78015</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>(555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@primecuts.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Monday-Friday: 9am-6pm</p>
+                                <p>Saturday: 10am-4pm</p>
+                                <p>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section style="padding: 40px 0; background-color: var(--gray);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Visit Our Store</h2>
+                </div>
+                
+                <div style="width: 100%; height: 400px; background-color: #ddd; border-radius: 8px; display: flex; justify-content: center; align-items: center;">
+                    <p>Map would be embedded here</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Checkout Page -->
+    <div id="checkout" class="page-content">
+        <section class="checkout">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Checkout</h2>
+                    <p>Complete your purchase</p>
+                </div>
+                
+                <div class="checkout-container">
+                    <div class="checkout-form">
+                        <h3>Shipping Information</h3>
+                        <form id="checkoutForm">
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" id="fullname" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Shipping Address</label>
+                                <input type="text" id="address" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="zip">ZIP Code</label>
+                                <input type="text" id="zip" required>
+                            </div>
+                            
+                            <h3 style="margin-top: 30px;">Payment Details</h3>
+                            
+                            <div class="form-group">
+                                <label for="cardnumber">Card Number</label>
+                                <input type="text" id="cardnumber" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="expiry">Expiration Date</label>
+                                <input type="text" id="expiry" placeholder="MM/YY" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" required>
+                            </div>
+                            
+                            <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">Complete Purchase</button>
+                        </form>
+                    </div>
+                    
+                    <div class="checkout-summary">
+                        <h3>Order Summary</h3>
+                        
+                        <div class="summary-item">
+                            <div>Whole Beef</div>
+                            <div>$1200.00</div>
+                        </div>
+                        
+                        <div class="summary-item">
+                            <div>Half Beef</div>
+                            <div>$650.00</div>
+                        </div>
+                        
+                        <div class="summary-item">
+                            <div>Shipping</div>
+                            <div>$25.00</div>
+                        </div>
+                        
+                        <div class="summary-total">
+                            <div>Total</div>
+                            <div>$1875.00</div>
+                        </div>
+                        
+                        <div style="margin-top: 30px;">
+                            <h3>Shipping Options</h3>
+                            <div class="form-group">
+                                <div>
+                                    <input type="radio" id="standard" name="shipping" checked>
+                                    <label for="standard">Standard Shipping (3-5 business days) - $25.00</label>
+                                </div>
+                                
+                                <div>
+                                    <input type="radio" id="express" name="shipping">
+                                    <label for="express">Express Shipping (2 business days) - $45.00</label>
+                                </div>
+                                
+                                <div>
+                                    <input type="radio" id="overnight" name="shipping">
+                                    <label for="overnight">Overnight Shipping - $75.00</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -539,10 +1026,10 @@
                 
                 <div class="footer-column">
                     <h3>Quick Links</h3>
-                    <a href="#">Home</a>
-                    <a href="#">Products</a>
-                    <a href="#">About Us</a>
-                    <a href="#">Contact</a>
+                    <a href="#" class="nav-link" data-page="home">Home</a>
+                    <a href="#" class="nav-link" data-page="products">Products</a>
+                    <a href="#" class="nav-link" data-page="about">About Us</a>
+                    <a href="#" class="nav-link" data-page="contact">Contact</a>
                 </div>
                 
                 <div class="footer-column">
@@ -570,6 +1057,25 @@
     </footer>
 
     <script>
+        // Simple Single Page Application functionality
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.getAttribute('data-page');
+                
+                // Hide all pages
+                document.querySelectorAll('.page-content').forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Show the selected page
+                document.getElementById(pageId).classList.add('active');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        });
+
         // Simple cart functionality
         document.querySelectorAll('.add-to-cart').forEach(button => {
             button.addEventListener('click', function() {
@@ -584,6 +1090,25 @@
                 // Show added message
                 alert(`Added to cart: ${title} - ${price}`);
             });
+        });
+
+        // Form submission handlers
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        document.getElementById('checkoutForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your order! It has been processed successfully.');
+            document.querySelector('.cart-count').textContent = '0';
+            
+            // Hide all pages and show home
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById('home').classList.add('active');
         });
     </script>
 </body>
